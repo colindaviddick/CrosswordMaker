@@ -1,0 +1,324 @@
+﻿<Window x:Class="CrosswordMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CrosswordMaker"            
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900" Background="SteelBlue">
+
+    <Window.Resources>
+        <Style x:Key="BorderHeading" TargetType="Border">
+            <Setter Property="Background" Value="DeepSkyBlue"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Padding" Value="30 5"/>
+        </Style>
+        <Style x:Key="TextHeading" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style x:Key="Square" TargetType="TextBox">
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="CrosswordRow" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Width" Value="378"/>
+            <Setter Property="Height" Value="27"/>
+        </Style>
+        <Style x:Key="CrosswordGrid" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="Width" Value="378"/>
+            <Setter Property="Height" Value="378"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <!--Main Page Grid Definitions-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="250*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Button Style="{StaticResource Hot}"     Height="10"/>
+            <Button Style="{StaticResource Default}" Height="10"/>
+
+        </StackPanel>
+        <!--Headings-->
+        <Border Style="{StaticResource BorderHeading}" Grid.Row="0" Grid.Column="0">
+            <TextBlock Style="{StaticResource TextHeading}">Crossword</TextBlock>
+        </Border>
+        <Border Style="{StaticResource BorderHeading}" Grid.Row="0" Grid.Column="1">
+            <TextBlock Style="{StaticResource TextHeading}">Clues</TextBlock>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <StackPanel Background="Black" Style="{StaticResource CrosswordGrid}">
+                <Border Background="White">
+                    <StackPanel Style="{StaticResource CrosswordRow}">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">1</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">2</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">3</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">4</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">5</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">6</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">7</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">8</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">9</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">10</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">11</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">12</TextBlock>
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">13</TextBlock>
+                    </StackPanel>
+                </Border>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">A</TextBlock>
+                    </Border>
+                    <TextBox x:Name="A1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="A13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">B</TextBlock>
+                    </Border>
+                    <TextBox x:Name="B1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="B13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">C</TextBlock>
+                    </Border>
+                    <TextBox x:Name="C1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="C13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">D</TextBlock>
+                    </Border>
+                    <TextBox x:Name="D1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="D13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">E</TextBlock>
+                    </Border>
+                    <TextBox x:Name="E1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="E13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">F</TextBlock>
+                    </Border>
+                    <TextBox x:Name="F1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="F13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">G</TextBlock>
+                    </Border>
+                    <TextBox x:Name="G1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="G13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">H</TextBlock>
+                    </Border>
+                    <TextBox x:Name="H1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="H13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">I</TextBlock>
+                    </Border>
+                    <TextBox x:Name="I1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="I13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">J</TextBlock>
+                    </Border>
+                    <TextBox x:Name="J1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="J13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">K</TextBlock>
+                    </Border>
+                    <TextBox x:Name="K1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="K13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">L</TextBlock>
+                    </Border>
+                    <TextBox x:Name="L1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="L13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+                <StackPanel Style="{StaticResource CrosswordRow}">
+                    <Border Background="White">
+                        <TextBlock Width="13" Margin="7" HorizontalAlignment="Center">M</TextBlock>
+                    </Border>
+                    <TextBox x:Name="M1"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M2"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M3"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M4"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M5"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M6"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M7"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M8"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M9"  Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M10" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M11" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M12" Style="{StaticResource Square}"></TextBox>
+                    <TextBox x:Name="M13" Style="{StaticResource Square}"></TextBox>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
